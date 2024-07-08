@@ -1,0 +1,3 @@
+[submodule "CompactTree"]
+	path = CompactTree
+	url = git@github.com:niemasd/CompactTree.git
