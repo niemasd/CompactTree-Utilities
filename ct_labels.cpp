@@ -5,6 +5,7 @@
 #include "compact_tree.h"
 
 // definitions and constants
+#define CT_UTILS_VERSION "0.0.1"
 #define PROGRAM_DESCRIPTION "Extracts the tree's labels"
 #define PROGRAM_USAGE_ARGS "[-hILrt] <newick trees filename|->"
 #define PROGRAM_USAGE_H "-h: print this message and exit"
@@ -15,6 +16,7 @@
 
 // show usage message
 void show_usage(const char* const exe = "nw_label") {
+    std::cerr << "CompactTree-Utilities v" << CT_UTILS_VERSION << " (compiled with CompactTree v" << COMPACTTREE_VERSION << ')' << std::endl << std::endl;
     std::cerr << PROGRAM_DESCRIPTION << std::endl << std::endl;
     std::cerr << exe << ' ' << PROGRAM_USAGE_ARGS << std::endl << std::endl;
     std::cerr << "  " << PROGRAM_USAGE_H << std::endl;
