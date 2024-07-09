@@ -11,7 +11,7 @@ EXES=ct_labels
 
 # compile
 all: $(EXES)
-print_topology: compact_tree.h ct_labels.cpp
+print_topology: compact_tree.h common.h ct_labels.cpp
 	$(CXX) $(RELEASEFLAGS) -o ct_labels ct_labels.cpp
 clean:
 	$(RM) -r $(EXES) *.o

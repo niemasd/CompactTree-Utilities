@@ -2,10 +2,10 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
+#include "common.h"
 #include "compact_tree.h"
 
 // definitions and constants
-#define CT_UTILS_VERSION "0.0.1"
 #define PROGRAM_DESCRIPTION "Extracts the tree's labels"
 #define PROGRAM_USAGE_ARGS "[-hILrt] <newick trees filename|->"
 #define PROGRAM_USAGE_H "-h: print this message and exit"
