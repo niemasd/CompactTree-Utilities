@@ -15,7 +15,7 @@
 #define PROGRAM_USAGE_T "-t: TAB-separated - print on a single line, separated by tab stops."
 
 // show usage message
-void show_usage(const char* const exe = "nw_label") {
+void show_usage(const char* const exe = "ct_label") {
     std::cerr << "CompactTree-Utilities v" << CT_UTILS_VERSION << " (compiled with CompactTree v" << COMPACTTREE_VERSION << ')' << std::endl << std::endl;
     std::cerr << PROGRAM_DESCRIPTION << std::endl << std::endl;
     std::cerr << exe << ' ' << PROGRAM_USAGE_ARGS << std::endl << std::endl;
