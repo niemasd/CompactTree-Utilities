@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
 
     // parse tree and print labels
     std::string tree_string; std::istream* infile;
-    if(strcmp(fn, "-") == 0) { infile = &(std::cin); } else { infile = new std::ifstream(fn); }
+    if(strcmp(fn, "-") == 0) { infile = &(std::cin); } else { infile = new std::ifstream(fn); } check_open(*infile, fn);
     while(getline(*infile, tree_string)) {
         compact_tree tree(tree_string, false, true, false);
         if(only_root) { std::cout << tree.get_label(ROOT_NODE) << std::endl; }
