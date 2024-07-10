@@ -62,18 +62,17 @@ int main(int argc, char** argv) {
     }
 
     // parse tree and print labels
-    std::string tree_string; std::istream* infile;
+    std::string tree_string; std::istream* infile; CT_NODE_T curr; CT_NODE_T num_nodes; CT_NODE_T num_nodes_minus_1;
     if(strcmp(fn, "-") == 0) { infile = &(std::cin); } else { infile = new std::ifstream(fn); } check_open(*infile, fn);
     while(getline(*infile, tree_string)) {
-        compact_tree tree(tree_string, false, true, false);
+        compact_tree tree(tree_string, false, true, false); const std::vector<std::string> & labels = tree.get_labels();
         if(only_root) { std::cout << tree.get_label(ROOT_NODE) << std::endl; }
         else {
-            const CT_NODE_T N = tree.get_num_nodes();
-            for(CT_NODE_T node = 0; node < N; ++node) {
-                if(tree.is_leaf(node) ? include_leaves : include_internal) { std::cout << tree.get_label(node) << delim; }
+            num_nodes = tree.get_num_nodes(); num_nodes_minus_1 = num_nodes - 1;
+            for(curr = ROOT_NODE; curr < num_nodes; ++curr) {
+                if(tree.is_leaf(curr) ? include_leaves : include_internal) { std::cout << labels[curr] << ((curr == num_nodes_minus_1) ? '\n' : delim); }
             }
         }
-        if(delim != '\n') { std::cout << std::endl; }
     }
     if(strcmp(fn, "-") != 0) { delete infile; } return 0;
 }
