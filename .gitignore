@@ -1,5 +1,6 @@
 # compiled executables
 ct_labels
+ct_rename
 
 # Prerequisites
 *.d

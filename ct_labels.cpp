@@ -1,3 +1,7 @@
+/**
+ * Reimplementation of nw_labels
+ */
+
 // include statements
 #include <cstring>
 #include <fstream>
@@ -15,7 +19,7 @@
 #define PROGRAM_USAGE_T "-t: TAB-separated - print on a single line, separated by tab stops."
 
 // show usage message
-void show_usage(const char* const exe = "ct_label") {
+void show_usage(const char* const exe = "ct_labels") {
     std::cerr << "CompactTree-Utilities v" << CT_UTILS_VERSION << " (compiled with CompactTree v" << COMPACTTREE_VERSION << ')' << std::endl << std::endl;
     std::cerr << PROGRAM_DESCRIPTION << std::endl << std::endl;
     std::cerr << exe << ' ' << PROGRAM_USAGE_ARGS << std::endl << std::endl;
@@ -29,6 +33,7 @@ void show_usage(const char* const exe = "ct_label") {
 // main program
 int main(int argc, char** argv) {
     // check user args
+    if(argc == 1) { show_usage(argv[0]); exit(1); }
     bool only_root = false; bool include_leaves = true; bool include_internal = true; char delim = '\n'; char* fn = nullptr;
     char* curr_arg; size_t curr_len;
     for(int i = 1; i < argc; ++i) {
